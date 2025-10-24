@@ -36,8 +36,8 @@
 }
 </style>
 <script>
-var images=["images/Baseball.jpg","images/Basketball.jpg","images/Bowling.jpg","images/PingPong.jpg",
-"images/Soccer.jpg","images/Tennis.jpg"];
+var images=["Baseball.jpg","Basketball.jpg","Bowling.jpg","PingPong.jpg",
+"Soccer.jpg","Tennis.jpg"];
 var nameOfImages=["Baseball","Basketball","Bowling","PingPong","Soccer","Tennis"];
 var counter=[0,0,0,0,0,0];
 var targetIndex;
@@ -55,7 +55,7 @@ function flashImages(){
 	lastIndex=index;
 	counter[index]++;
 	document.getElementById("clue").innerHTML=counter;
-	document.getElementById("theImage").src="images/"+nameOfImages[index]+".jpg";
+	document.getElementById("theImage").src=""+nameOfImages[index]+".jpg";
 	
 }
 
@@ -71,7 +71,7 @@ function stopFlash() {
 	clearInterval(timer1);
 	clearTimeout(timer2);
 	targetIndex=Math.floor(Math.random()*1000)%images.length;
-	document.getElementById("theImage").src="images/blank.png";
+	document.getElementById("theImage").src="blank.png";
 	document.getElementById("targetPic").innerHTML=nameOfImages[targetIndex];
 	document.getElementById("question").style.display="block";
 	
@@ -93,15 +93,15 @@ function checkAnswer(){
 <div id="clue"></div>
 <div id="imageDiv">
 <ul>
-<li><img src="images/Baseball.jpg" title="Baseball"/><p>Baseball</p></li>
-<li><img src="images/Basketball.jpg" title="Basketball"/><p>Basketball</p></li>
-<li><img src="images/Bowling.jpg" title="Bowling" /><p>Bowling</p></li>
-<li><img src="images/PingPong.jpg" title="PingPong" /><p>PingPong</p></li>
-<li><img src="images/Soccer.jpg" title="Soccer" /><p>Soccer</p></li>
-<li><img src="images/Tennis.jpg" title="Tennis" /><p>Tennis</p></li>
+<li><img src="Baseball.jpg" title="Baseball"/><p>Baseball</p></li>
+<li><img src="Basketball.jpg" title="Basketball"/><p>Basketball</p></li>
+<li><img src="Bowling.jpg" title="Bowling" /><p>Bowling</p></li>
+<li><img src="PingPong.jpg" title="PingPong" /><p>PingPong</p></li>
+<li><img src="Soccer.jpg" title="Soccer" /><p>Soccer</p></li>
+<li><img src="Tennis.jpg" title="Tennis" /><p>Tennis</p></li>
 </ul>
 </div>
-<img id="theImage" src="images/blank.png" alt=""/>
+<img id="theImage" src="blank.png" alt=""/>
 <input type="button" value="Start" onclick="startGame();"/>
 <div id="question"><p>How many times did you see the <span id="targetPic"></span>?</p>
 <p>Your answer: <input type="number" id="answer" value="0" size="1"/>
@@ -109,4 +109,5 @@ function checkAnswer(){
 </div>
 </div>
 </body>
+
 </html>
